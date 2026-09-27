@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #050505;
+    --bg-secondary: #0B0B0B;
+    --surface: #121212;
+    --text-primary: #F5F5F5;
+    --text-secondary: #A5A5A5;
+    --border-color: rgba(255, 255, 255, 0.12);
+    --accent-blue: #1c69d4;
+  }
+
+  html {
+    background-color: #050505;
+    color: #F5F5F5;
+    scroll-behavior: auto; /* Managed by Lenis */
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #050505;
+    color: #F5F5F5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom minimal luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.35);
+  }
+}
+
+/* Lenis smooth scrolling rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
+
+/* Canvas styling */
+.hero-canvas {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* Luxury typography and UI utilities */
+.font-editorial {
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.micro-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #a5a5a5;
+  font-weight: 500;
+}
+
+.glass-panel {
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-nav {
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* BMW M Tri-color subtle gradient line */
+.m-stripe {
+  height: 2px;
+  background: linear-gradient(90deg, #1c69d4 0%, #1c69d4 33%, #26478d 33%, #26478d 66%, #e7222e 66%, #e7222e 100%);
+}
